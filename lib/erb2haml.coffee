@@ -2,17 +2,17 @@
 path = require('path')
 exec = require('child_process').exec
 
-module.exports = Html2slim =
+module.exports = Erb2haml =
   subscriptions: null
   whitelist: ['.html', '.erb']
   config:
     executePath:
       type: 'string'
-      default: 'erb2slim'
+      default: 'html2haml'
 
   activate: (state) ->
     @subscriptions = new CompositeDisposable
-    @subscriptions.add atom.commands.add 'atom-workspace', 'html2slim:convert': => @convert()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'erb2haml:convert': => @convert()
 
   deactivate: ->
     @subscriptions.dispose()
@@ -22,13 +22,13 @@ module.exports = Html2slim =
     filePath = editor.buffer.file.path
 
     sourceFileObj = path.parse(filePath)
-    resultFile = "#{sourceFileObj.dir}/#{sourceFileObj.name}.slim"
+    resultFile = "#{sourceFileObj.dir}/#{sourceFileObj.name}.html.haml"
 
     unless (sourceFileObj.ext in @whitelist)
       editor.notificationManager.addError("Converting only #{@whitelist} files")
       return
 
-    execCommand = atom.config.get('html2slim.executePath')
+    execCommand = atom.config.get('erb2haml.executePath')
     exec "#{execCommand} #{filePath} #{resultFile}", (error, stdout, stderr) ->
       if stderr
         editor.notificationManager.addError(stderr)

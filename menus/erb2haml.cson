@@ -2,19 +2,19 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Convert to slim'
-      'command': 'html2slim:convert'
+      'label': 'Convert to haml'
+      'command': 'erb2haml:convert'
     }
   ]
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'html2slim'
+      'label': 'erb2haml'
       'submenu': [
         {
           'label': 'Convert'
-          'command': 'html2slim:convert'
+          'command': 'erb2haml:convert'
         }
       ]
     ]

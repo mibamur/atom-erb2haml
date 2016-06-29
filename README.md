@@ -4,8 +4,5 @@
 
 ## Install
 
-<code>gem install html2slim</code>
-
-and
-
-<code>apm install html2slim</code>
+<code>gem install html2haml</code>
+<code>apm install erb2haml</code>
