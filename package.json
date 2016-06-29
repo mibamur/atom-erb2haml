@@ -1,13 +1,13 @@
 {
   "name": "erb2haml",
   "main": "./lib/erb2haml",
-  "version": "0.4.0",
+  "version": "0.1.0",
   "description": "Convert erb to haml templates",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": "erb2haml:convert"
   },
-  "repository": "https://github.com/paa001/atom-html2slim.git",
+  "repository": "https://github.com/mibamur/atom-erb2haml",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
